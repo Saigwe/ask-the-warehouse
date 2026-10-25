@@ -1,0 +1,7 @@
+# The agent may ONLY read these gold models. Anything else is rejected before execution.
+allowed_models:
+  - gold.fct_orders
+  - gold.rpt_daily_revenue
+rules:
+  - Revenue means net_revenue_usd (refunds count as zero). Never recompute it from gross.
+  - Read-only: a single SELECT statement; no DDL or DML.

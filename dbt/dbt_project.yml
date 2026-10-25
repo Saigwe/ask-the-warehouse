@@ -1,0 +1,22 @@
+name: ask_the_warehouse
+version: 0.1.0
+config-version: 2
+profile: ask_the_warehouse
+model-paths:
+- models
+macro-paths:
+- macros
+test-paths:
+- tests
+target-path: target
+clean-targets:
+- target
+- dbt_packages
+models:
+  ask_the_warehouse:
+    staging:
+      +schema: silver
+      +materialized: view
+    marts:
+      +schema: gold
+      +materialized: table

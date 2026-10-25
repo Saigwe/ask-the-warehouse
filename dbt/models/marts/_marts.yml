@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: fct_orders
+    columns:
+      - name: order_id
+        data_tests: [unique, not_null]
+  - name: rpt_daily_revenue
+    columns:
+      - name: order_date
+        data_tests: [unique, not_null]
