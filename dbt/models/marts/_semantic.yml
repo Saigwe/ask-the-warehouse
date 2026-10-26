@@ -1,0 +1,158 @@
+# The semantic layer: every metric is defined here once. Dashboards, the eval and the agent all read
+# these definitions through MetricFlow; nothing downstream re-implements a formula.
+version: 2
+
+semantic_models:
+  - name: spend_lines
+    description: Federal contract actions (obligations and de-obligations), one row per action.
+    model: ref('fct_spend_lines')
+    defaults:
+      agg_time_dimension: action_date
+    entities:
+      - name: spend_line
+        type: primary
+        expr: line_id
+      - name: supplier
+        type: foreign
+        expr: supplier_id
+    dimensions:
+      - name: action_date
+        type: time
+        type_params:
+          time_granularity: day
+      - name: fiscal_quarter
+        type: categorical
+        description: Federal fiscal quarter, e.g. "FY2025 Q1" (October to December 2024).
+      - name: org_unit
+        type: categorical
+        description: Awarding bureau, e.g. "National Park Service".
+      - name: category
+        type: categorical
+        description: Spend category from the PSC taxonomy, e.g. "IT & telecom".
+      - name: competition_status
+        type: categorical
+        description: Competed, Not competed or Unknown.
+      - name: business_size
+        type: categorical
+        description: Small, Other than small or Unknown.
+    measures:
+      - name: net_spend
+        agg: sum
+        expr: amount_usd
+      - name: gross_obligations
+        agg: sum
+        expr: obligation_usd
+      - name: deobligations
+        agg: sum
+        expr: deobligation_usd
+      - name: contract_actions
+        agg: sum
+        expr: "1"
+      - name: obligation_actions
+        agg: sum
+        expr: is_obligation
+      - name: active_suppliers
+        agg: count_distinct
+        expr: supplier_id
+      - name: not_competed_obligations
+        agg: sum
+        expr: "case when competition_status = 'Not competed' then obligation_usd else 0 end"
+      - name: competition_known_obligations
+        agg: sum
+        expr: "case when competition_status <> 'Unknown' then obligation_usd else 0 end"
+      - name: small_business_obligations
+        agg: sum
+        expr: "case when business_size = 'Small' then obligation_usd else 0 end"
+      - name: size_known_obligations
+        agg: sum
+        expr: "case when business_size <> 'Unknown' then obligation_usd else 0 end"
+
+  - name: suppliers
+    description: Registered suppliers (UEI) and the parent company they roll up to.
+    model: ref('dim_suppliers')
+    entities:
+      - name: supplier
+        type: primary
+        expr: supplier_id
+    dimensions:
+      - name: supplier_name
+        type: categorical
+      - name: parent_supplier_name
+        type: categorical
+
+metrics:
+  - name: net_spend
+    label: Net spend (USD)
+    description: Obligations minus de-obligations. THE definition of "spend".
+    type: simple
+    type_params: {measure: net_spend}
+  - name: gross_obligations
+    label: Gross obligations (USD)
+    description: New money obligated, ignoring de-obligations.
+    type: simple
+    type_params: {measure: gross_obligations}
+  - name: deobligations
+    label: De-obligations (USD, negative)
+    description: Money returned from cancelled or reduced contracts.
+    type: simple
+    type_params: {measure: deobligations}
+  - name: contract_actions
+    label: Contract actions
+    description: Count of awards and modifications.
+    type: simple
+    type_params: {measure: contract_actions}
+  - name: obligation_actions
+    label: Obligating actions
+    type: simple
+    type_params: {measure: obligation_actions}
+  - name: active_suppliers
+    label: Active suppliers
+    description: Distinct suppliers (UEI) with at least one action.
+    type: simple
+    type_params: {measure: active_suppliers}
+  - name: not_competed_obligations
+    label: Not-competed obligations (USD)
+    type: simple
+    type_params: {measure: not_competed_obligations}
+  - name: competition_known_obligations
+    label: Obligations with competition recorded (USD)
+    type: simple
+    type_params: {measure: competition_known_obligations}
+  - name: small_business_obligations
+    label: Small-business obligations (USD)
+    type: simple
+    type_params: {measure: small_business_obligations}
+  - name: size_known_obligations
+    label: Obligations with business size recorded (USD)
+    type: simple
+    type_params: {measure: size_known_obligations}
+  - name: not_competed_share
+    label: Not-competed share
+    description: Share of obligations awarded without competition, over actions where competition is recorded.
+    type: ratio
+    type_params:
+      numerator: not_competed_obligations
+      denominator: competition_known_obligations
+  - name: small_business_share
+    label: Small-business share
+    description: Share of obligations to small businesses, over actions where size is recorded.
+    type: ratio
+    type_params:
+      numerator: small_business_obligations
+      denominator: size_known_obligations
+  - name: average_obligation
+    label: Average obligation (USD)
+    description: Gross obligations per obligating action.
+    type: ratio
+    type_params:
+      numerator: gross_obligations
+      denominator: obligation_actions
+  - name: deobligation_rate
+    label: De-obligation rate
+    description: De-obligations as a share of gross obligations (positive number).
+    type: derived
+    type_params:
+      expr: -1 * deobligations / gross_obligations
+      metrics:
+        - name: deobligations
+        - name: gross_obligations

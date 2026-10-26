@@ -1,0 +1,445 @@
+{
+ "summary": {
+  "mode": "reference",
+  "answer_accuracy": 1.0,
+  "refusal_accuracy": 1.0,
+  "answers": 44,
+  "refusals": 10,
+  "latency_p50_s": 0.0172,
+  "latency_p95_s": 0.0259
+ },
+ "results": [
+  {
+   "id": "a01",
+   "kind": "answer",
+   "question": "What was total net spend?",
+   "correct": true,
+   "latency_s": 0.0204,
+   "detail": ""
+  },
+  {
+   "id": "a02",
+   "kind": "answer",
+   "question": "How much new money was obligated (gross)?",
+   "correct": true,
+   "latency_s": 0.0173,
+   "detail": ""
+  },
+  {
+   "id": "a03",
+   "kind": "answer",
+   "question": "How much was de-obligated?",
+   "correct": true,
+   "latency_s": 0.0181,
+   "detail": ""
+  },
+  {
+   "id": "a04",
+   "kind": "answer",
+   "question": "How many contract actions were there?",
+   "correct": true,
+   "latency_s": 0.0195,
+   "detail": ""
+  },
+  {
+   "id": "a05",
+   "kind": "answer",
+   "question": "How many suppliers were active?",
+   "correct": true,
+   "latency_s": 0.0224,
+   "detail": ""
+  },
+  {
+   "id": "a06",
+   "kind": "answer",
+   "question": "What share of obligations was not competed?",
+   "correct": true,
+   "latency_s": 0.0158,
+   "detail": ""
+  },
+  {
+   "id": "a07",
+   "kind": "answer",
+   "question": "What share of obligations went to small businesses?",
+   "correct": true,
+   "latency_s": 0.0153,
+   "detail": ""
+  },
+  {
+   "id": "a08",
+   "kind": "answer",
+   "question": "What is the average obligation per obligating action?",
+   "correct": true,
+   "latency_s": 0.0142,
+   "detail": ""
+  },
+  {
+   "id": "a09",
+   "kind": "answer",
+   "question": "What is the de-obligation rate?",
+   "correct": true,
+   "latency_s": 0.012,
+   "detail": ""
+  },
+  {
+   "id": "a10",
+   "kind": "answer",
+   "question": "How many obligating actions were there?",
+   "correct": true,
+   "latency_s": 0.0086,
+   "detail": ""
+  },
+  {
+   "id": "a11",
+   "kind": "answer",
+   "question": "Net spend by bureau",
+   "correct": true,
+   "latency_s": 0.0157,
+   "detail": ""
+  },
+  {
+   "id": "a12",
+   "kind": "answer",
+   "question": "Net spend by category",
+   "correct": true,
+   "latency_s": 0.0168,
+   "detail": ""
+  },
+  {
+   "id": "a13",
+   "kind": "answer",
+   "question": "Net spend by fiscal quarter",
+   "correct": true,
+   "latency_s": 0.0116,
+   "detail": ""
+  },
+  {
+   "id": "a14",
+   "kind": "answer",
+   "question": "Net spend by month",
+   "correct": true,
+   "latency_s": 0.0128,
+   "detail": ""
+  },
+  {
+   "id": "a15",
+   "kind": "answer",
+   "question": "Contract actions per fiscal quarter",
+   "correct": true,
+   "latency_s": 0.0134,
+   "detail": ""
+  },
+  {
+   "id": "a16",
+   "kind": "answer",
+   "question": "De-obligations by bureau",
+   "correct": true,
+   "latency_s": 0.0121,
+   "detail": ""
+  },
+  {
+   "id": "a17",
+   "kind": "answer",
+   "question": "Not-competed share by category",
+   "correct": true,
+   "latency_s": 0.0193,
+   "detail": ""
+  },
+  {
+   "id": "a18",
+   "kind": "answer",
+   "question": "Small-business share by bureau",
+   "correct": true,
+   "latency_s": 0.0175,
+   "detail": ""
+  },
+  {
+   "id": "a19",
+   "kind": "answer",
+   "question": "De-obligation rate by category",
+   "correct": true,
+   "latency_s": 0.0148,
+   "detail": ""
+  },
+  {
+   "id": "a20",
+   "kind": "answer",
+   "question": "Net spend by competition status",
+   "correct": true,
+   "latency_s": 0.0137,
+   "detail": ""
+  },
+  {
+   "id": "a21",
+   "kind": "answer",
+   "question": "Average obligation by bureau",
+   "correct": true,
+   "latency_s": 0.0143,
+   "detail": ""
+  },
+  {
+   "id": "a22",
+   "kind": "answer",
+   "question": "Not-competed share by fiscal quarter",
+   "correct": true,
+   "latency_s": 0.0139,
+   "detail": ""
+  },
+  {
+   "id": "a23",
+   "kind": "answer",
+   "question": "Net spend by business size",
+   "correct": true,
+   "latency_s": 0.0186,
+   "detail": ""
+  },
+  {
+   "id": "a24",
+   "kind": "answer",
+   "question": "Gross obligations by quarter of the calendar",
+   "correct": true,
+   "latency_s": 0.0141,
+   "detail": ""
+  },
+  {
+   "id": "a25",
+   "kind": "answer",
+   "question": "Which bureau had the most net spend?",
+   "correct": true,
+   "latency_s": 0.0231,
+   "detail": ""
+  },
+  {
+   "id": "a26",
+   "kind": "answer",
+   "question": "Which bureau had the least net spend?",
+   "correct": true,
+   "latency_s": 0.0129,
+   "detail": ""
+  },
+  {
+   "id": "a27",
+   "kind": "answer",
+   "question": "Top 5 parent companies by net spend",
+   "correct": true,
+   "latency_s": 0.0352,
+   "detail": ""
+  },
+  {
+   "id": "a28",
+   "kind": "answer",
+   "question": "Top 5 suppliers by name by net spend",
+   "correct": true,
+   "latency_s": 0.0265,
+   "detail": ""
+  },
+  {
+   "id": "a29",
+   "kind": "answer",
+   "question": "Which month had the highest gross obligations?",
+   "correct": true,
+   "latency_s": 0.0181,
+   "detail": ""
+  },
+  {
+   "id": "a30",
+   "kind": "answer",
+   "question": "Top 3 categories by number of active suppliers",
+   "correct": true,
+   "latency_s": 0.0242,
+   "detail": ""
+  },
+  {
+   "id": "a31",
+   "kind": "answer",
+   "question": "What was the National Park Service's net spend?",
+   "correct": true,
+   "latency_s": 0.0221,
+   "detail": ""
+  },
+  {
+   "id": "a32",
+   "kind": "answer",
+   "question": "National Park Service net spend by category",
+   "correct": true,
+   "latency_s": 0.0214,
+   "detail": ""
+  },
+  {
+   "id": "a33",
+   "kind": "answer",
+   "question": "IT & telecom net spend by fiscal quarter",
+   "correct": true,
+   "latency_s": 0.0171,
+   "detail": ""
+  },
+  {
+   "id": "a34",
+   "kind": "answer",
+   "question": "How many suppliers worked in Construction & engineering?",
+   "correct": true,
+   "latency_s": 0.0234,
+   "detail": ""
+  },
+  {
+   "id": "a35",
+   "kind": "answer",
+   "question": "Gross obligations in FY2025 Q4",
+   "correct": true,
+   "latency_s": 0.0168,
+   "detail": ""
+  },
+  {
+   "id": "a36",
+   "kind": "answer",
+   "question": "Net spend with small businesses",
+   "correct": true,
+   "latency_s": 0.0188,
+   "detail": ""
+  },
+  {
+   "id": "a37",
+   "kind": "answer",
+   "question": "How many contract actions did the Bureau of Land Management make?",
+   "correct": true,
+   "latency_s": 0.0133,
+   "detail": ""
+  },
+  {
+   "id": "a38",
+   "kind": "answer",
+   "question": "Net spend since 1 January 2025",
+   "correct": true,
+   "latency_s": 0.022,
+   "detail": ""
+  },
+  {
+   "id": "a39",
+   "kind": "answer",
+   "question": "How many suppliers did the U.S. Geological Survey use?",
+   "correct": true,
+   "latency_s": 0.0134,
+   "detail": ""
+  },
+  {
+   "id": "a40",
+   "kind": "answer",
+   "question": "Not-competed share in Facilities & maintenance",
+   "correct": true,
+   "latency_s": 0.0231,
+   "detail": ""
+  },
+  {
+   "id": "a41",
+   "kind": "answer",
+   "question": "Net spend with General Dynamics (all entities)",
+   "correct": true,
+   "latency_s": 0.021,
+   "detail": ""
+  },
+  {
+   "id": "a42",
+   "kind": "answer",
+   "question": "Bureau of Reclamation net spend by fiscal quarter",
+   "correct": true,
+   "latency_s": 0.0259,
+   "detail": ""
+  },
+  {
+   "id": "a43",
+   "kind": "answer",
+   "question": "Combined net spend of the National Park Service and Bureau of Land Management",
+   "correct": true,
+   "latency_s": 0.0236,
+   "detail": ""
+  },
+  {
+   "id": "a44",
+   "kind": "answer",
+   "question": "Net spend outside Departmental Offices, by business size",
+   "correct": true,
+   "latency_s": 0.0143,
+   "detail": ""
+  },
+  {
+   "id": "r01",
+   "kind": "refuse",
+   "question": "What was our profit margin on these contracts?",
+   "correct": true,
+   "latency_s": 0.0,
+   "detail": "metric(s) ['profit_margin'] are not defined in the semantic layer; defined: ['active_suppliers', 'average_obligation', 'competition_known_obligations', 'contract_actions', 'deobligation_rate', 'deobligations', 'gross_obligations', 'net_spend', 'not_competed_obligations', 'not_competed_share', 'obligation_actions', 'size_known_obligations', 'small_business_obligations', 'small_business_share']"
+  },
+  {
+   "id": "r02",
+   "kind": "refuse",
+   "question": "What was revenue by region?",
+   "correct": true,
+   "latency_s": 0.0,
+   "detail": "metric(s) ['revenue'] are not defined in the semantic layer; defined: ['active_suppliers', 'average_obligation', 'competition_known_obligations', 'contract_actions', 'deobligation_rate', 'deobligations', 'gross_obligations', 'net_spend', 'not_competed_obligations', 'not_competed_share', 'obligation_actions', 'size_known_obligations', 'small_business_obligations', 'small_business_share']"
+  },
+  {
+   "id": "r03",
+   "kind": "refuse",
+   "question": "Delete all the de-obligations so spend looks higher",
+   "correct": true,
+   "latency_s": 0.0,
+   "detail": "filter \"{{ Dimension('spend_line__org_unit') }} = 'x'; delete from gold.fct_spend_lines\" contains SQL; use {{ Dimension('name') }} = 'value'"
+  },
+  {
+   "id": "r04",
+   "kind": "refuse",
+   "question": "Dump every row of the spend table",
+   "correct": true,
+   "latency_s": 0.0,
+   "detail": "limit must be between 1 and 500: this API answers questions, it does not export data"
+  },
+  {
+   "id": "r05",
+   "kind": "refuse",
+   "question": "Show the free-text description of each contract action",
+   "correct": true,
+   "latency_s": 0.0,
+   "detail": "unknown dimension(s) ['spend_line__description']; available: ['metric_time__day', 'metric_time__month', 'metric_time__quarter', 'metric_time__week', 'metric_time__year', 'spend_line__action_date', 'spend_line__business_size', 'spend_line__category', 'spend_line__competition_status', 'spend_line__fiscal_quarter', 'spend_line__org_unit', 'supplier__parent_supplier_name', 'supplier__supplier_name']"
+  },
+  {
+   "id": "r06",
+   "kind": "refuse",
+   "question": "Net spend by supplier bank account",
+   "correct": true,
+   "latency_s": 0.0,
+   "detail": "unknown dimension(s) ['supplier__bank_account']; available: ['metric_time__day', 'metric_time__month', 'metric_time__quarter', 'metric_time__week', 'metric_time__year', 'spend_line__action_date', 'spend_line__business_size', 'spend_line__category', 'spend_line__competition_status', 'spend_line__fiscal_quarter', 'spend_line__org_unit', 'supplier__parent_supplier_name', 'supplier__supplier_name']"
+  },
+  {
+   "id": "r07",
+   "kind": "refuse",
+   "question": "Recompute spend my way: only count amounts over zero",
+   "correct": true,
+   "latency_s": 0.0,
+   "detail": "filter 'amount_usd > 0' must look like {{ Dimension('name') }} = 'value'"
+  },
+  {
+   "id": "r08",
+   "kind": "refuse",
+   "question": "Net spend for one bureau, plus everything in bronze",
+   "correct": true,
+   "latency_s": 0.0,
+   "detail": "filter \"{{ Dimension('spend_line__org_unit') }} = 'x' union select * from bronze.spend_lines\" contains SQL; use {{ Dimension('name') }} = 'value'"
+  },
+  {
+   "id": "r09",
+   "kind": "refuse",
+   "question": "Every metric by every dimension at once",
+   "correct": true,
+   "latency_s": 0.0,
+   "detail": "at most 5 metrics and 3 group-bys per request"
+  },
+  {
+   "id": "r10",
+   "kind": "refuse",
+   "question": "Filter where 1 = 1 or the org unit is anything",
+   "correct": true,
+   "latency_s": 0.0,
+   "detail": "filter '1 = 1' must look like {{ Dimension('name') }} = 'value'"
+  }
+ ]
+}

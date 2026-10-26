@@ -1,4 +1,0 @@
-{"id": "q01", "question": "What was total net revenue?", "gold_sql": "select sum(net_revenue_usd) as net_revenue_usd from gold.fct_orders"}
-{"id": "q02", "question": "How many orders were refunded?", "gold_sql": "select count(*) as refunded_orders from gold.fct_orders where status = 'refunded'"}
-{"id": "q03", "question": "Which region had the most net revenue?", "gold_sql": "select region from gold.fct_orders group by region order by sum(net_revenue_usd) desc limit 1"}
-{"id": "q04", "question": "What was net revenue by month?", "gold_sql": "select date_trunc('month', order_date) as month, sum(net_revenue_usd) as net_revenue_usd from gold.rpt_daily_revenue group by 1"}

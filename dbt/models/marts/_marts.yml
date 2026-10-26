@@ -1,10 +1,38 @@
 version: 2
+
 models:
-  - name: fct_orders
+  - name: fct_spend_lines
+    description: One row per contract action, the grain every metric is built on.
     columns:
-      - name: order_id
+      - name: line_id
         data_tests: [unique, not_null]
-  - name: rpt_daily_revenue
+      - name: supplier_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_suppliers')
+                field: supplier_id
+  - name: dim_suppliers
     columns:
-      - name: order_date
+      - name: supplier_id
+        data_tests: [unique, not_null]
+  - name: metricflow_time_spine
+    time_spine:
+      standard_granularity_column: date_day
+    columns:
+      - name: date_day
+        granularity: day
+        data_tests: [unique, not_null]
+  - name: rpt_dashboard_category_quarter
+    data_tests:
+      - unique_combination:
+          arguments:
+            columns: [category, fiscal_quarter]
+  - name: rpt_dashboard_org_unit
+    columns:
+      - name: org_unit
+        data_tests: [unique, not_null]
+  - name: rpt_dashboard_legacy_spend
+    columns:
+      - name: org_unit
         data_tests: [unique, not_null]

@@ -1,21 +1,18 @@
 version: 2
 models:
-- name: stg_bronze__customers
-  columns:
-  - name: customer_id
-    data_tests:
-    - unique
-    - not_null
-- name: stg_bronze__orders
-  columns:
-  - name: order_id
-    data_tests:
-    - unique
-    - not_null
-  - name: customer_id
-    data_tests:
-    - not_null
-    - relationships:
-        arguments:
-          to: ref('stg_bronze__customers')
-          field: customer_id
+  - name: stg_bronze__spend_lines
+    columns:
+      - name: line_id
+        data_tests: [unique, not_null]
+      - name: supplier_id
+        data_tests: [not_null]
+      - name: competition_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [Competed, Not competed, Unknown]
+      - name: business_size
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [Small, Other than small, Unknown]

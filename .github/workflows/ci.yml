@@ -15,5 +15,8 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Fixture pipeline (synthetic fixture -> dbt build with tests)
+      - name: Fixture pipeline (dbt build, benchmark through the semantic layer, dashboard check, MCP and agent tests)
         run: make fixture-all
+      - name: Benchmark summary
+        if: always()
+        run: cat results/eval_reference.md results/dashboard_check.md >> "$GITHUB_STEP_SUMMARY" || true

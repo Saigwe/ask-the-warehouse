@@ -1,7 +1,6 @@
 version: 2
 sources:
 - name: bronze
-  description: Raw tables, loaded by the fixture generator (CI) or the real-data loaders.
+  description: Raw tables, loaded from project 10's real USAspending spend lines (ingestion/) or the CI fixture.
   tables:
-  - name: customers
-  - name: orders
+  - name: spend_lines
