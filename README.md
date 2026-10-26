@@ -92,7 +92,7 @@ make agent-eval           # Claude agent on the benchmark: needs ANTHROPIC_API_K
 - [x] Benchmark of 54 questions (44 answerable, 10 to refuse) with hand-written gold SQL; accuracy and latency tracked in CI
 - [ ] Run the Claude agent on the benchmark and report execution accuracy, refusal accuracy, latency and cost per question
 - [ ] Saved queries and a Power BI or Evidence.dev front end reading the same metrics
-- [ ] 3-minute Loom walkthrough
+- [ ] 3-minute Loom walkthrough ([script ready](docs/walkthrough.md))
 
 ## Interview topics this project prepares
 - Semantic layers and metric governance (MetricFlow: measures, ratio and derived metrics, time spines)
