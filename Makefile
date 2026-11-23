@@ -3,7 +3,7 @@ DB ?= warehouse/atw.duckdb
 SPEND_CUBE ?= ../procurement-spend-cube/warehouse/spend.duckdb
 DBT = cd dbt && DUCKDB_PATH=../$(DB) dbt
 
-.PHONY: all load dbt check fixture-all fixture agent-eval mcp clean
+.PHONY: all load dbt check fixture-all fixture agent-eval mcp clean charts
 
 all: load dbt check   ## real USAspending spend lines from project 10 (build that first)
 
@@ -32,3 +32,6 @@ mcp:
 
 clean:
 	rm -rf warehouse dbt/target dbt/logs
+
+charts:                                            ## README charts -> docs/charts
+	$(PY) charts/make_charts.py

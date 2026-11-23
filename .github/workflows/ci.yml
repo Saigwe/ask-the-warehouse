@@ -17,6 +17,8 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Fixture pipeline (dbt build, benchmark through the semantic layer, dashboard check, MCP and agent tests)
         run: make fixture-all
+      - name: README charts render from the results
+        run: python charts/make_charts.py --db warehouse/fixture.duckdb --out "$RUNNER_TEMP/charts"
       - name: Benchmark summary
         if: always()
         run: cat results/eval_reference.md results/dashboard_check.md >> "$GITHUB_STEP_SUMMARY" || true

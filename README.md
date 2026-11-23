@@ -20,6 +20,13 @@ Project 12 of my portfolio plan. At a global management consultancy I built gove
 | **Why it matters** | An analyst, a dashboard and an AI assistant get the same answer to "how much did the Park Service spend?", and a wrong dashboard fails CI instead of reaching a board pack. |
 | **Proof** | [Numbers](#numbers). Benchmark and dashboard reports in [`results/`](results); CI reruns all of it on every push. |
 
+## Charts
+Rendered from this repo's own results by `charts/make_charts.py` (`make charts`); CI re-renders them on every push.
+
+![Net spend by bureau on the governed dashboard vs the planted legacy dashboard](docs/charts/dashboard_check.png)
+
+![Net spend by fiscal quarter stacked by category](docs/charts/spend_by_quarter.png)
+
 ## Architecture
 ```mermaid
 flowchart LR
